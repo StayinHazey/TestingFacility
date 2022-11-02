@@ -20,5 +20,22 @@ public class Move : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * Time.fixedDeltaTime * mySpeed);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "Collectible")
+        {
+            Debug.Log("Collision");
+            SpriteRenderer sr = other.gameObject.GetComponent("SpriteRenderer") as SpriteRenderer;
+
+            if(sr != null)
+            {
+                Debug.Log("found sr");
+                sr.color = new Color(11, 255, 0);
+            }
+            else
+                Debug.Log("No SpriteRenderer Found in Collision");
+        }
+    }
 }
 
