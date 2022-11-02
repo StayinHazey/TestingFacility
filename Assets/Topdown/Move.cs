@@ -31,7 +31,7 @@ public class Move : MonoBehaviour
             if(sr != null)
             {
                 Debug.Log("found sr");
-                sr.color = new Color(11, 255, 0);
+                sr.color = new Color(0,1,0,1);
             }
             else
                 Debug.Log("No SpriteRenderer Found in Collision");
